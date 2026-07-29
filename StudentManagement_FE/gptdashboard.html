@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+
+    <script src="gptdashboard.js"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:40px;
+        }
+
+        .container{
+            width:900px;
+            background:white;
+            border-radius:15px;
+            padding:30px;
+            box-shadow:0 15px 40px rgba(0,0,0,.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#333;
+            margin-bottom:25px;
+        }
+
+        .form-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            font-weight:bold;
+            margin-bottom:5px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            outline:none;
+            font-size:15px;
+        }
+
+        input:focus{
+            border-color:#4facfe;
+        }
+
+        button{
+            background:#4facfe;
+            color:white;
+            border:none;
+            padding:12px 25px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:15px;
+            margin-top:10px;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#1c7ed6;
+        }
+
+        #outputspan{
+            display:block;
+            margin-top:15px;
+            color:green;
+            font-weight:bold;
+        }
+
+        .card{
+            margin-top:25px;
+            background:#f8f9fa;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,.08);
+        }
+
+        #displaypage{
+            line-height:1.8;
+            font-size:17px;
+        }
+
+        #displayallonpage{
+            line-height:1.8;
+            font-size:16px;
+        }
+
+        hr{
+            margin:25px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎓 Student Management</h1>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name">
+    </div>
+
+    <div class="form-group">
+        <label>Roll No</label>
+        <input type="text" id="rollno">
+    </div>
+
+    <div class="form-group">
+        <label>Marks</label>
+        <input type="number" id="marks">
+    </div>
+
+    <div class="form-group">
+        <label>DOB</label>
+        <input type="date" id="dob">
+    </div>
+
+    <div class="form-group">
+        <label>Mob No</label>
+        <input type="number" id="mobno">
+    </div>
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <span id="outputspan"></span>
+
+    <hr>
+
+    <div class="form-group">
+        <label>Search Student</label>
+        <input id="searchbox">
+    </div>
+
+    <button onclick="searchStudent()">Search</button>
+
+    <div class="card">
+        <h3>Student Details</h3>
+        <br>
+        <div id="displaypage"></div>
+    </div>
+
+    <div class="card">
+        <h3>All Students</h3>
+        <br>
+        <div id="displayallonpage"></div>
+    </div>
+
+    <button onclick="displayAll()">Display All</button>
+
+    <br>
+    
+        <button onclick="wishBirthday()">Wish Birthday</button>
+</div>
+
+</body>
+</html>

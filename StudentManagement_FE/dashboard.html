@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="dashboard.js">
+
+    </script>
+</head>
+<body>
+    
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+
+        <br>
+
+        <lable for="rollno">RollNo:</lable>
+        <input type="text" id="rollno">
+
+        <br>
+
+        <label for="marks">Marks:</label>
+        <input type="text" id="marks">
+
+        <br>
+        <button onclick="addStudent()">Add Student</button>
+
+        <br>
+
+        <div id="outputspan"></div>
+
+        <br>
+
+       Enter Roll No: <input id="searchbox">
+        <button onclick="searchStudent()">Search</button>
+    </div>
+
+    <div id="displaypage"></div>
+
+    <div id="displayallonpage"></div>
+    <button onclick="displayAll()">Display All</button>
+</body>
+</html>
